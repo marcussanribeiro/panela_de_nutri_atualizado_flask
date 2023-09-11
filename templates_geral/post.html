@@ -494,15 +494,15 @@
       </div>
 
       <!-- Coluna 2 - Imagem Ampliada -->
-      <div class="md:block product-image-thumb w-1/3 h-600 active bg-black">
+      <div class="md:block product-image-thumb w-1/3 h-600 active">
         <!-- Imagem ampliada (inicialmente oculta) -->
-        <img class=" product-image rounded w-300 h-600" id="minha-imagem" src="{{post.capa}}" alt="Imagem Ampliada">
+        <img class=" product-image rounded-lg w-300 h-600" id="minha-imagem" src="{{post.capa}}" alt="Imagem Ampliada">
     </div>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let minhaImagem = document.getElementById('minha-imagem');
-            minhaImagem.style.width = '420px'; // Define a largura usando CSS
+            minhaImagem.style.width = '100%'; // Define a largura usando CSS
             minhaImagem.style.height = '450px'; // Define a altura usando CSS
         });
     </script>

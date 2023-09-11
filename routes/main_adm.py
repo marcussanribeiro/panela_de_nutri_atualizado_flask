@@ -1,6 +1,6 @@
 from flask import Flask, Blueprint, request, render_template, url_for, abort, redirect, flash, get_flashed_messages, current_app, session
 from flask_login import current_user, login_user, login_required, logout_user
-from models.models import Conteudo, Subconteudo, Usuario, Parceiro
+from models.models import Conteudo, Subconteudo, Usuario, Parceiro, Portfolio, Servico
 from models.forms import loginForm
 from models.forms import postForm
 from models.forms import registerForm
@@ -129,11 +129,13 @@ def generate_token():
     return secrets.token_urlsafe(20)
 
 @main_adm.route("/criar_parceiros", methods=["GET", "POST"])
+@login_required
 def criar_parceiros():
     user = Usuario.query.filter_by(id=current_user.id).first()
     return render_template("parceiros.html", user=user)
 
 @main_adm.route('/upload_parceiros', methods=['POST'])
+@login_required
 def upload_parceiros():
     logomarca = request.files['logomarca']
     if logomarca and allowed_file(logomarca.filename):
@@ -143,6 +145,55 @@ def upload_parceiros():
 
         parceiro = Parceiro(logomarca=caminho_imagem)
         db.session.add(parceiro)
+        db.session.commit()
+
+        return "Upload bem-sucedido!"  # Adicionando um retorno após o upload bem-sucedido
+    else:
+        return "Erro: A capa é um arquivo inválido."
+    
+
+@main_adm.route("/criar_portfolio", methods=["GET", "POST"])
+@login_required
+def criar_portfolio():
+    user = Usuario.query.filter_by(id=current_user.id).first()
+    return render_template("criar_portfolio.html", user=user)
+
+@main_adm.route('/upload_portfolio', methods=['POST'])
+@login_required
+def upload_portfolio():
+    portfolio = request.files['portfolio']
+    if portfolio and allowed_file(portfolio.filename):
+        filename = secure_filename(portfolio.filename)
+        portfolio.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+        caminho_imagem = os.path.join('/', current_app.config['UPLOAD_FOLDER'], filename)
+
+        portfolio = Portfolio(imagem=caminho_imagem)
+        db.session.add(portfolio)
+        db.session.commit()
+
+        return "Upload bem-sucedido!"  # Adicionando um retorno após o upload bem-sucedido
+    else:
+        return "Erro: A capa é um arquivo inválido."
+    
+@main_adm.route("/criar_consultorias", methods=["GET", "POST"])
+@login_required
+def criar_consultoria():
+    user = Usuario.query.filter_by(id=current_user.id).first()
+    return render_template("criar_consultoria.html", user=user)
+
+@main_adm.route('/upload_consultoria', methods=['POST'])
+@login_required
+def upload_consultoria():
+    imagem = request.files['imagem']
+    titulo = request.form['titulo']
+    resumo = request.form['resumo']
+    if imagem and allowed_file(imagem.filename):
+        filename = secure_filename(imagem.filename)
+        imagem.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+        caminho_imagem = os.path.join('/', current_app.config['UPLOAD_FOLDER'], filename)
+
+        servico = Servico(imagem=caminho_imagem, titulo=titulo, resumo=resumo)
+        db.session.add(servico)
         db.session.commit()
 
         return "Upload bem-sucedido!"  # Adicionando um retorno após o upload bem-sucedido

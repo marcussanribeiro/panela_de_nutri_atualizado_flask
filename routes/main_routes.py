@@ -1,7 +1,7 @@
 from flask import Flask, Blueprint, request, render_template, url_for, abort, redirect, flash, get_flashed_messages
 from flask_login import current_user, login_user, login_required
 from models.forms import loginForm
-from models.models import Conteudo, Subconteudo, Subtopico, Usuario, Parceiro
+from models.models import Conteudo, Subconteudo, Subtopico, Usuario, Parceiro, Portfolio, Servico
 from flask_mail import Message
 from database import db
 import secrets
@@ -13,7 +13,9 @@ main_routes = Blueprint('main', __name__, template_folder='../templates_geral')
 def index():
     query = Conteudo.query.order_by(Conteudo.id.desc()).all()
     logomarca = Parceiro.query.order_by(Parceiro.id.desc()).all()
-    return render_template("index.html", query=query, logomarca=logomarca)
+    portfolio = Portfolio.query.order_by(Portfolio.id.desc()).all()
+    servico = Servico.query.order_by(Servico.id.desc()).all()
+    return render_template("index.html", query=query, logomarca=logomarca, portfolio=portfolio, servico=servico )
 
 @main_routes.route('/posts/<token>')
 def show_post(token):

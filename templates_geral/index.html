@@ -531,40 +531,44 @@
   <div
     class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
   >
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+    <div class="group rounded  shadow hover:bg-primary">
+      <div class="h-72 w-full text-center xl:h-72 xl:w-full">
         <!--<div class="hidden group-hover:block">
           <img
             src="/static/img/icon-development-white.svg"
             alt="development icon"
           />
         </div>-->
-        <div class="block">
-          <img
-            src="/static/img/emagrecimento.jpg"
+        {% for servicos in servico %}
+        <div class="block ">
+         
+          <img class="" src="{{servicos.imagem}}"
             alt="content marketing icon"
           />
         </div>
       </div>
       <div class="text-center">
         <h3
-          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
+          class="pt-2 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
         >
-        Modulação Intestinal
+        {{servicos.titulo}}
         </h3>
         <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          {{servicos.resumo}}
         </p>
+        {% endfor %}
       </div>
+      
     </div>
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+
+    <!--<div class="group rounded px-8 py-12 shadow hover:bg-primary">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-        <!--<div class="hidden group-hover:block">
+        <div class="hidden group-hover:block">
           <img
             src="/static/img/icon-content-white.svg"
             alt="content marketing icon"
           />
-        </div>-->
+        </div>
         <div class="block">
           <img
             src="/static/img/emagrecimento.jpg"
@@ -585,12 +589,12 @@
     </div>
     <div class="group rounded px-8 py-12 shadow hover:bg-primary">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-       <!-- <div class="hidden group-hover:block">
+        <div class="hidden group-hover:block">
           <img
             src="/static/img/icon-mobile-white.svg"
             alt="Mobile Application icon"
           />
-        </div>-->
+        </div>
         <div class="block">
           <img
             src="/static/img/emagrecimento.jpg"
@@ -608,7 +612,7 @@
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </p>
       </div>
-    </div>
+    </div>-->
     <!--<div class="group rounded px-8 py-12 shadow hover:bg-primary">
       <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
         <div class="hidden group-hover:block">
@@ -705,7 +709,19 @@
   <div
     class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2"
   >
-    <a
+    <!--<a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >-->
+    {% for ports in portfolio %}
+      <img
+        src="{{ports.imagem}}"
+        class="w-full shadow rounded-xl"
+        alt="portfolio image"
+      />
+      {% endfor %}
+    <!--</a>-->
+    <!--<a
       href="/"
       class="mx-auto transform transition-all hover:scale-105 md:mx-0"
     >
@@ -734,17 +750,7 @@
         class="w-full shadow rounded-xl"
         alt="portfolio image"
       />
-    </a>
-    <a
-      href="/"
-      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
-    >
-      <img
-        src="/static/img/nutricionista.jpg"
-        class="w-full shadow rounded-xl"
-        alt="portfolio image"
-      />
-    </a>
+    </a>-->
   </div>
 </div>
 
