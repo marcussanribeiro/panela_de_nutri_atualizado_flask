@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construart - Inicio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ url_for('static', filename='js/tailwindcss.js') }}"> </script>
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body class="bg-white font-family-karla ">
+
+
+    <!-- Top Bar Nav -->
+    <nav class="w-full py-4 border-t border-b bg-white z-50" x-data="{ open: false }" id="myMenu">
+        <div class="block sm:hidden">
+            <a
+                href="#"
+                class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
+                @click="open = !open"
+            >
+                MENU <i :class="open ? 'fa-chevron-down': 'fa-chevron-up'" class="fas ml-2"></i>
+            </a>
+        </div>
+        <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
+            <img class="ml-5 w-24 h-10" src="/static/img/MARCA_CONSTRUART_OP2.png">
+            <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
+                <a href="#" class="hover:bg-menu-construart text-orange-400 rounded py-2 px-4 mx-2">Inicio</a>
+                <a href="#" class="hover:bg-menu-construart text-orange-400 rounded py-2 px-4 mx-2">Sobre Nós</a>
+                <a href="#" class="hover:bg-menu-construart text-orange-400 rounded py-2 px-4 mx-2">Projetos</a>
+                <a href="#" class="hover:bg-menu-construart text-orange-400 rounded py-2 px-4 mx-2">Contatos</a>
+                <!--<a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Culture</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Sports</a>-->
+            </div>
+        </div>
+    </nav>
+    <script>
+        window.addEventListener("scroll", function() {
+            var menu = document.getElementById("myMenu");
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop >= 939) {
+                menu.classList.add("fixed", "top-0");
+            } else {
+                menu.classList.remove("fixed", "top-0");
+            }
+        });
+        </script>
+
+
+    <!-- Text Header -->
+    <header class=" w-full  m-0">
+        <div class="flex flex-col w-full ">
+            <div class="swiper mySwiper w-full  h-full">
+                <div class="swiper-wrapper items-center h-72">
+                  <div class="swiper-slide"><img class="w-full h-full object-center  z-50 " src="/static/img/MARCA CONSTRUART OP2.png"></div>
+                  <div class="swiper-slide"><img class="w-full h-full object-center z-50" src="/static/img/tecnologia-na-construcao-civil.jpg"></div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 4</div>
+                  <div class="swiper-slide">Slide 5</div>
+                  <div class="swiper-slide">Slide 6</div>
+                  <div class="swiper-slide">Slide 7</div>
+                  <div class="swiper-slide">Slide 8</div>
+                  <div class="swiper-slide">Slide 9</div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+              </div>
+        </div>
+        
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    speed: 1000,
+    autoplay: {
+              delay: 3000, // Tempo de pausa entre as transições de 3 segundos (3000 milissegundos)
+      },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+</script>
+    <!-- Topic Nav -->
+    <nav class="w-full py-4 bg-menu-construart shadow">
+        <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
+
+            <nav>
+                <!--<ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
+                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
+                </ul>-->
+            </nav>
+
+            <div class="flex items-center text-lg no-underline h-6 text-white pr-6">
+        </div>
+
+    </nav>
+    
+    <div class="container mx-auto flex flex-wrap py-6 min-h-screen ">
+        <a href="https://api.whatsapp.com/send?phone=71982659978" target="_blank" class="fixed bottom-4 flex flex-row right-4 z-30 bg-green-500 text-white rounded-full p-3 shadow">
+            <img src="/static/img/whatsapp-logo-thin-svgrepo-com.svg" alt="Ícone do WhatsApp" class="h-6 w-6">
+            <span class="ml-2">whatsapp</span>
+          </a>
+
+        <!-- Posts Section -->
+        <section class="w-full grid grid-cols-2 phone:max-md:grid-cols-1 items-center px-3">
+            {% block content %} {% endblock %}
+
+        </section>
+
+        <section class="w-full grid grid-cols-1 phone:max-md:grid-cols-1 items-center px-3">
+            {% block sub_post %} {% endblock %}
+
+        </section>
+
+    </div>
+
+    <footer class="w-full border-t bg-menu-construart pb-12 ">
+
+        <div
+            class="relative w-full flex items-center invisible md:visible md:pb-12"
+            x-data="getCarouselData()"
+        >
+            <!--<button
+                class="absolute bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 ml-12"
+                x-on:click="decrement()">
+                &#8592;
+            </button>
+            <template x-for="image in images.slice(currentIndex, currentIndex + 6)" :key="images.indexOf(image)">
+                <img class="w-1/6 hover:opacity-75" :src="image">
+            </template>
+            <button
+                class="absolute right-0 bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 mr-12"
+                x-on:click="increment()">
+                &#8594;
+            </button>-->
+        </div>
+        <div class="w-full container mx-auto flex flex-col items-center">
+            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-3 ">
+                <a href="#" class="uppercase text-white px-3">Sobre Nós</a>
+                <a href="#" class="uppercase text-white px-3">Projetos</a>
+                <a href="#" class="uppercase text-white px-3">Contatos</a>
+            </div>
+            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between py-3 ">
+                <span class="text-white">CNPJ: 48.822.965/0001-96</span>
+            </div>
+            <div class="flex flex-col md:flex-row text-center md:text-left md:justify-between ">
+                <span class="text-white">Rua Wilson Barbosa de Melo, 23 | Loja 01</span>
+            </div>
+            </div>
+    </footer>
+
+</body>
+</html>

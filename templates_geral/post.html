@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="{{ url_for('static', filename='js/tailwindcss.config.js') }}"> </script>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    name="viewport"
+  />
+
+  <title>Claudia Martins</title>
+
+  <meta property="og:title" content="Homepage | Atom Template" />
+
+  <meta property="og:locale" content="pt_BR" />
+
+  <link
+    rel="canonical"
+    href="//"
+  />
+
+  <meta
+    property="og:url"
+    content="//"
+  />
+
+  <meta
+    name="description"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  />
+
+  <!--<link rel="icon" type="image/png" href="/static/img/favicon.png" />-->
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="Atom Template" />
+
+  <meta property="og:image" content="/static/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@tailwindmade" />
+
+  <link
+    crossorigin="crossorigin"
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+  />
+
+  <link
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="preload"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    crossorigin="anonymous"
+    href="/static/styles/main.min.css"
+    media="screen"
+    rel="stylesheet"
+  />
+  
+  <script
+    defer
+    src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
+  ></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  
+
+  
+</head>
+
+
+  <body
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+    class="relative"
+    x-data="{ mobileMenu: false }"
+  >
+    
+    <div id="main" class="relative">
+      <div
+  x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}"
+>
+  <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
+  ">
+  <div class="container flex items-center justify-between">
+    <div>
+      <a href="/">
+        <!--<img src="/static/img/logo.svg" class="w-24 lg:w-48" alt="logo image" />-->
+      </a>
+    </div>
+    <div class="hidden lg:block">
+      <ul class="flex items-center">
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#about')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Sobre Mim</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#services')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Serviços</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#portfolio')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Portfolio</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <!--<li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#clients')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Clientes</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>-->
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#work')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Parceiros</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <!--<li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#statistics')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Meu Trabalho</span>
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>-->
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#blog')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Blog</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#contact')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Contatos</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="block lg:hidden">
+      <button @click="mobileMenu = true">
+        <i class="bx bx-menu text-4xl text-white"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+>
+  <div
+    class="absolute right-0 min-h-screen w-2/3 bg-green py-4 px-8 shadow md:w-1/3"
+  >
+    <button
+      class="absolute top-0 right-0 mt-4 mr-4"
+      @click="mobileMenu = false"
+    >
+      <img src="" class="h-10 w-auto" alt="" />
+    </button>
+
+    <ul class="mt-8 flex flex-col">
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#about')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >About</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#services')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Services</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#portfolio')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Portfolio</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#clients')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Clients</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#work')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Parceiros</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#statistics')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Statistics</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#blog')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Blog</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#contact')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Contact</span
+        >
+        
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div><div
+  class="relative bg-cover bg-center bg-no-repeat py-8 h-screen"
+  style="background-image: url(/static/img/WhatsApp\ Image\ 2023-08-16\ at\ 11.46.17.jpeg)"
+>
+  <div
+    class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to  bg-cover bg-center bg-no-repeat"
+  ></div>
+
+
+  <div
+    class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48"
+  >
+    <div class="flex flex-col items-center justify-center lg:flex-row">
+      <div class="rounded-full border-8 border-green-700 shadow-xl">
+        <img
+          src="/static/img/blog-author.jpg"
+          class="h-48 rounded-full sm:h-56"
+          alt="author"
+        />
+      </div>
+      <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+        <h1
+          class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl"
+        >
+          Nutricionista
+        </h1>
+        <h1
+        class="text-center  font-lucida italic text-4xl text-white sm:text-left sm:text-5xl md:text-6xl"
+      >
+         Claudia Martins
+      </h1>
+        <div
+          class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start"
+        >
+          <div
+            class="flex items-center justify-center pl-0 sm:justify-start md:pl-1"
+          >
+            <p class="font-body text-lg uppercase text-white">Conecte-se com meu trabalho</p>
+            <div class="hidden sm:block">
+              <i class="bx bx-chevron-right text-3xl text-white"></i>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
+          >
+            <a href="/">
+              <i
+                class="bx bxl-facebook-square text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i
+                class="bx bxl-whatsapp text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+            <!--<a href="/" class="pl-4">
+              <i
+                class="bx bxl-dribbble text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>-->
+            <a href="/" class="pl-4">
+              <i
+                class="bx bxl-linkedin text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i
+                class="bx bxl-instagram text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="bg-grey-50" id="postagem">
+  <div class="container py-16 md:py-20">
+    <div class="mx-auto w-full sm:w-3/4 lg:w-full">
+      <h2
+        class="text-center font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
+      >
+        Blog Pessoal
+      </h2>
+      <h4
+      class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+    >
+   {{ post.titulo }}
+    </h4>
+    <!--<div class="grid grid-cols-2 items-center justify-center pt-4 sm:pt-4 bg-black">
+  
+      <!-- Div para miniaturas das imagens
+      <div class="grid bg-yellow w-1/5 h-full">
+          <div class="grid grid-rows-4">
+              <div class="product-image-thumb">
+                  <img class="w-full py-2 product-image-thumb" src="/static/img/post-01.png" alt="Product Image 1">
+              </div>
+              <div class="product-image-thumb">
+                  <img class="w-full product-image-thumb" src="/static/img/post-02.png" alt="Product Image 2">
+              </div>
+              <div class="product-image-thumb">
+                  <img class="w-full product-image-thumb" src="/static/img/post-03.png" alt="Product Image 3">
+              </div>
+          </div>
+      </div>
+    
+      <!-- Div para a imagem principal
+      <div class="grid bg-white w-4/5 h-full">
+          <div class="product-image-thumb active">
+              <img class="w-full h-full product-image" src="/static/img/post-01.png" alt="Product Image">
+          </div>
+      </div>
+    </div>-->
+
+
+    <div class="flex gap-8 pt-10">
+      <!-- Coluna 1 - Miniaturas -->
+      <div class="flex flex-col">
+          <!-- Miniaturas alinhadas verticalmente -->
+          <div class="space-y-4 ">
+              <!-- Miniatura 1 -->
+              <div class="cursor-pointer product-image-thumb">
+                  <img src="{{post.capa}}" alt="Miniatura 1" class="w-32 h-auto rounded">
+              </div>
+
+              <!-- Miniatura 2 -->
+              {% for imagens in subconteudos %}
+              <div class=" cursor-pointer product-image-thumb">
+                  <img src="{{imagens.sub_imagem}}" alt="Miniatura 2" class="w-32 h-auto rounded">
+              </div>
+              {% endfor %}
+              <!-- Miniatura 3
+              <div class="cursor-pointer product-image-thumb">
+                <img src="/static/img/post-03.png" alt="Miniatura 2" class="w-32 h-auto rounded">
+            </div>
+            <!-- Miniatura 4
+            <div class=" cursor-pointer product-image-thumb">
+              <img src="/static/img/post-03.png" alt="Miniatura 2" class="w-32 h-auto rounded">
+          </div>-->
+
+              <!-- Adicione mais miniaturas conforme necessário -->
+
+          </div>
+      </div>
+
+      <!-- Coluna 2 - Imagem Ampliada -->
+      <div class="md:block product-image-thumb w-1/3 h-600 active bg-black">
+        <!-- Imagem ampliada (inicialmente oculta) -->
+        <img class=" product-image rounded w-300 h-600" id="minha-imagem" src="{{post.capa}}" alt="Imagem Ampliada">
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let minhaImagem = document.getElementById('minha-imagem');
+            minhaImagem.style.width = '420px'; // Define a largura usando CSS
+            minhaImagem.style.height = '450px'; // Define a altura usando CSS
+        });
+    </script>
+    
+
+      <!-- Coluna 3 - Descrição do Produto -->
+      <div class="flex-shrink-0 w-1/3 flex flex-col justify-center">
+          <!-- Descrição do produto -->
+          <div class="product-description">
+              <h2 class="text-xl font-semibold mb-2">Nome do Produto</h2>
+              <p class="text-gray-600">Descrição do produto Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p class="text-green-600 font-semibold mt-2">$99.99</p>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+    
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <script>
+      (function($) {
+          $('.product-image-thumb').on('click', function () {
+              var image_element = $(this).find('img');
+              $('.product-image').prop('src', $(image_element).attr('src'));
+              $('.product-image-thumb.active').removeClass('active');
+              $(this).addClass('active');
+          });
+      })(jQuery);
+  </script>
+
+
+          
+
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<div class="bg-green-700">
+  <div class="container flex flex-col justify-between py-6 sm:flex-row">
+    <p class="text-center font-body text-white md:text-left">
+    </p>
+    <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
+      <a href="/">
+        <i
+          class="bx bxl-facebook-square text-2xl text-white hover:text-gray-300"
+        ></i>
+      </a>
+      <a href="/" class="pl-4">
+        <i class="bx bxl-whatsapp text-2xl text-white hover:text-gray-300"></i>
+      </a>
+      <a href="/" class="pl-4">
+        <i class="bx bxl-linkedin text-2xl text-white hover:text-gray-300"></i>
+      </a>
+      <a href="/" class="pl-4">
+        <i class="bx bxl-instagram text-2xl text-white hover:text-gray-300"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="/static/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+
+
+    <!--Start of Tawk.to Script-->
+    
+    
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/64df68d7cc26a871b030037e/1h84b32fr';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+  <!--End of Tawk.to Script-->
+
+
+
+    
+  </body>
+</html>

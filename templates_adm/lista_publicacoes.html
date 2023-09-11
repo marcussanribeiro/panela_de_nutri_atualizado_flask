@@ -1,0 +1,60 @@
+{% extends "template_base1.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Postagens</title>
+    <script src="{{url_for('static', filename='/js/redirecionamento.js')}}"></script>
+</head>
+<body>
+    {% block content %}
+    <div class="w-full flex justify-end">
+      <a href="{{url_for('adm.criar')}}"><button class="inline-flex px-5 py-3 text-white bg-laranja-construart hover:text-white focus:bg-site-black hover:bg-site-black focus:bg-site-black border border-white-600 rounded-md mb-3">
+        <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+        </svg>
+        Nova Publicação
+      </button>
+    </a>
+    </div>
+    <div class="overflow-y-auto w-full ">
+        <table class="w-full text-center">
+          <tr class="">
+            <td> ID</td>
+            <td> Titulo</td>
+            <td> Logradouro</td>
+            <td> Opções</td>
+        </tr>
+        <tbody class="w-full h-10">
+          {% for posts in post %}
+          <tr class="{{ 'bg-gray-300' if loop.index is divisibleby(2) else 'bg-white' }}">
+            <td>{{posts.id}}</td>
+            <td>{{posts.titulo}}</td>
+            <td>
+              <button class="inline-flex px-5 py-3 text-white bg-laranja-construart hover:text-white focus:bg-site-black hover:bg-site-black focus:bg-site-black border border-white-600 rounded-md mb-3" type="submit" onclick="editar({{posts.id}})" name="editar">editar</button>
+              <button class=" inline-flex px-5 py-3 text-white bg-laranja-construart hover:text-white focus:bg-site-black hover:bg-site-black focus:bg-site-black border border-white-600 rounded-md mb-3" type="submit" onclick="deletar({{posts.id}})" name="deletar">deletar</button>
+            </td>
+        </tr>
+          {% endfor %}
+        </tbody>
+        </table>
+        <script>
+          function editar(id) {
+    window.location.href = "/staffer/editar_post/" + id;
+}
+
+          function deletar(id) {
+    if(confirm("Deseja deletar?")) {
+      var form = document.createElement('form');
+      form.setAttribute('method', 'POST');
+      form.setAttribute('action', '/staffer/deletar/' + id);
+      document.body.appendChild(form);
+      form.submit();
+    }
+  }
+        </script>
+    {% endblock %}
+    
+</body>
+</html>

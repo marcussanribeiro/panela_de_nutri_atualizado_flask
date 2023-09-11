@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <script defer src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="{{ url_for('static', filename='js/tailwindcss.config.js') }}"> </script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+
+  <meta charset="utf-8" />
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+  <meta
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    name="viewport"
+  />
+
+  <title>Claudia Martins</title>
+
+  <meta property="og:title" content="Homepage | Atom Template" />
+
+  <meta property="og:locale" content="pt_BR" />
+
+  <link
+    rel="canonical"
+    href="//"
+  />
+
+  <meta
+    property="og:url"
+    content="//"
+  />
+
+  <meta
+    name="description"
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  />
+
+  <!--<link rel="icon" type="image/png" href="/static/img/favicon.png" />-->
+
+  <meta name="theme-color" content="#5540af" />
+
+  <meta property="og:site_name" content="Atom Template" />
+
+  <meta property="og:image" content="/static/img/social.jpg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="twitter:site" content="@tailwindmade" />
+
+  <link
+    crossorigin="crossorigin"
+    href="https://fonts.gstatic.com"
+    rel="preconnect"
+  />
+
+  <link
+    as="style"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="preload"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Raleway:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+    rel="stylesheet"
+  />
+
+  <link
+    crossorigin="anonymous"
+    href="/static/styles/main.min.css"
+    media="screen"
+    rel="stylesheet"
+  />
+  
+  <script
+    defer
+    src="https://unpkg.com/@alpine-collective/toolkit@1.0.0/dist/cdn.min.js"
+  ></script>
+
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  
+
+  
+</head>
+
+
+  <body
+    :class="{ 'overflow-hidden max-h-screen': mobileMenu }"
+    class="relative"
+    x-data="{ mobileMenu: false }"
+  >
+    
+    <div id="main" class="relative">
+      <div
+  x-data="{
+    triggerNavItem(id) {
+        $scroll(id)
+    },
+    triggerMobileNavItem(id) {
+        mobileMenu = false;
+        this.triggerNavItem(id)
+    }
+}"
+>
+  <div class="w-full z-50 top-0 py-3 sm:py-5  absolute
+  ">
+  <div class="container flex items-center justify-between">
+    <div>
+      <a href="/">
+        <!--<img src="/static/img/logo.svg" class="w-24 lg:w-48" alt="logo image" />-->
+      </a>
+    </div>
+    <div class="hidden lg:block">
+      <ul class="flex items-center">
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#about')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Sobre Mim</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#services')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Serviços</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#portfolio')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Portfolio</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <!--<li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#clients')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Clientes</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>-->
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#work')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Parceiros</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <!--<li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#statistics')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Meu Trabalho</span>
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>-->
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#blog')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Blog</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            @click="triggerNavItem('#contact')"
+            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+            >Contatos</span
+          >
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="block lg:hidden">
+      <button @click="mobileMenu = true">
+        <i class="bx bx-menu text-4xl text-white"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div
+  class="pointer-events-none fixed inset-0 z-70 min-h-screen bg-black bg-opacity-70 opacity-0 transition-opacity lg:hidden"
+  :class="{ 'opacity-100 pointer-events-auto': mobileMenu }"
+>
+  <div
+    class="absolute right-0 min-h-screen w-2/3 bg-green py-4 px-8 shadow md:w-1/3"
+  >
+    <button
+      class="absolute top-0 right-0 mt-4 mr-4"
+      @click="mobileMenu = false"
+    >
+      <img src="/static/img/icon-close.svg" class="h-10 w-auto" alt="" />
+    </button>
+
+    <ul class="mt-8 flex flex-col">
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#about')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >About</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#services')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Services</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#portfolio')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Portfolio</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#clients')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Clients</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#work')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Parceiros</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#statistics')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Statistics</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#blog')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Blog</span
+        >
+        
+      </li>
+      
+      <li class="py-2">
+        
+        <span
+          @click="triggerMobileNavItem('#contact')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+          >Contact</span
+        >
+        
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+      <div><div
+  class="relative bg-cover bg-center bg-no-repeat py-8 h-screen"
+  style="background-image: url(/static/img/WhatsApp\ Image\ 2023-08-16\ at\ 11.46.17.jpeg)"
+>
+  <div
+    class="absolute inset-0 z-20 bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to  bg-cover bg-center bg-no-repeat"
+  ></div>
+
+
+  <div
+    class="container relative z-30 pt-20 pb-12 sm:pt-56 sm:pb-48 lg:pt-64 lg:pb-48"
+  >
+    <div class="flex flex-col items-center justify-center lg:flex-row">
+      <div class="rounded-full border-8 border-green-700 shadow-xl">
+        <img
+          src="/static/img/blog-author.jpg"
+          class="h-48 rounded-full sm:h-56"
+          alt="author"
+        />
+      </div>
+      <div class="pt-8 sm:pt-10 lg:pl-8 lg:pt-0">
+        <h1
+          class="text-center font-header text-4xl text-white sm:text-left sm:text-5xl md:text-6xl"
+        >
+          Nutricionista
+        </h1>
+        <h1
+        class="text-center  font-lucida italic text-4xl text-white sm:text-left sm:text-5xl md:text-6xl"
+      >
+         Claudia Martins
+      </h1>
+        <div
+          class="flex flex-col justify-center pt-3 sm:flex-row sm:pt-5 lg:justify-start"
+        >
+          <div
+            class="flex items-center justify-center pl-0 sm:justify-start md:pl-1"
+          >
+            <p class="font-body text-lg uppercase text-white">Conecte-se com meu trabalho</p>
+            <div class="hidden sm:block">
+              <i class="bx bx-chevron-right text-3xl text-white"></i>
+            </div>
+          </div>
+          <div
+            class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
+          >
+            <a href="/">
+              <i
+                class="bx bxl-facebook-square text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i
+                class="bx bxl-whatsapp text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+            <!--<a href="/" class="pl-4">
+              <i
+                class="bx bxl-dribbble text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>-->
+            <a href="/" class="pl-4">
+              <i
+                class="bx bxl-linkedin text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+            <a href="/" class="pl-4">
+              <i
+                class="bx bxl-instagram text-2xl text-white hover:text-gray-300"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-grey-50" id="about">
+  <!--<span
+  class="bg-black absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+  >Editar</span>-->
+
+  <span
+  class=" absolute block end-10 mt-4 rounded-full border-black border-2 px-6 py-2 text-center font-body text-sm font-bold text-black md:text-base"
+  >Editar</span>
+  <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
+
+    <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
+      <h2
+        class="font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
+      >
+        Quem sou eu?
+      </h2>
+      <h4
+        class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+      >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      </h4>
+      <p class="pt-6 font-body leading-relaxed text-grey-20">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+      <div
+        class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
+      >
+        <div class="flex items-center justify-center sm:justify-start">
+          <p class="font-body text-lg font-semibold uppercase text-grey-20">
+            Conecte-se Comigo
+          </p>
+          <div class="hidden sm:block">
+            <i class="bx bx-chevron-right text-2xl text-primary"></i>
+          </div>
+        </div>
+        <div
+          class="flex items-center justify-center pt-5 pl-2 sm:justify-start sm:pt-0"
+        >
+          <a href="/">
+            <i
+              class="bx bxl-facebook-square text-2xl text-green-700 hover:text-gray-300"
+            ></i>
+          </a>
+          <a href="/" class="pl-4">
+            <i
+              class="bx bxl-whatsapp text-2xl text-green-700 hover:text-gray-300"
+            ></i>
+          </a>
+          <!--<a href="/" class="pl-4">
+            <i
+              class="bx bxl-dribbble text-2xl text-green-700 hover:text-gray-300"
+            ></i>
+          </a>-->
+          <a href="/" class="pl-4">
+            <i
+              class="bx bxl-linkedin text-2xl text-green-700 hover:text-gray-300"
+            ></i>
+          </a>
+          <a href="/" class="pl-4">
+            <i
+              class="bx bxl-instagram text-2xl text-green-700 hover:text-gray-300"
+            ></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+      <!--<h2 class="font-header text-4xl font-semibold uppercase text-green-700 sm:text-4xl lg:text-4xl"> Serviços Procurados</h2>
+      <div>
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">
+            Nutrição Esportiva
+          </h4>
+          <h3 class="font-body text-3xl font-bold text-green-700">85%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-green-700" style="width: 30%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">Modulação Intestinal</h4>
+          <h3 class="font-body text-3xl font-bold text-green-700">70%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-green-700" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">
+            Emagrecimento
+          </h4>
+          <h3 class="font-body text-3xl font-bold text-green-700">98%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-green-700" style="width: 98%"></div>
+        </div>
+      </div>-->
+      <div class=" w-full h-96">
+      <img class=" w-full rounded-xl sm:h-96 object-center" src="/static/img/blog-author.jpg"  alt="author"/>
+
+    </div>
+  </div>
+</div>
+
+<div class="container py-16 md:py-20" id="services">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
+  >
+    Consultorias
+  </h2>
+  <h3
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    E Serviços
+  </h3>
+
+  <div
+    class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
+  >
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <!--<div class="hidden group-hover:block">
+          <img
+            src="/static/img/icon-development-white.svg"
+            alt="development icon"
+          />
+        </div>-->
+        <div class="block">
+          <img
+            src="/static/img/emagrecimento.jpg"
+            alt="content marketing icon"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
+        >
+        Modulação Intestinal
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <!--<div class="hidden group-hover:block">
+          <img
+            src="/static/img/icon-content-white.svg"
+            alt="content marketing icon"
+          />
+        </div>-->
+        <div class="block">
+          <img
+            src="/static/img/emagrecimento.jpg"
+            alt="content marketing icon"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
+        >
+          EMAGRECIMENTO
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+       <!-- <div class="hidden group-hover:block">
+          <img
+            src="/static/img/icon-mobile-white.svg"
+            alt="Mobile Application icon"
+          />
+        </div>-->
+        <div class="block">
+          <img
+            src="/static/img/emagrecimento.jpg"
+            alt="content marketing icon"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
+        >
+        Nutrição Esportiva
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+    <!--<div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="/static/img/icon-email-white.svg"
+            alt="Email Marketing icon"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="/static/img/icon-email-black.svg"
+            alt="Email Marketing icon"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          Email Development
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="/static/img/icon-design-white.svg"
+            alt="Theme Design icon"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="/static/img/icon-design-black.svg"
+            alt="Theme Design icon"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          Graphic Design
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>
+    </div>
+    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
+      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
+        <div class="hidden group-hover:block">
+          <img
+            src="/static/img/icon-graphics-white.svg"
+            alt="Graphic Design icon"
+          />
+        </div>
+        <div class="block group-hover:hidden">
+          <img
+            src="/static/img/icon-graphics-black.svg"
+            alt="Graphic Design icon"
+          />
+        </div>
+      </div>
+      <div class="text-center">
+        <h3
+          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
+        >
+          Web Design
+        </h3>
+        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+      </div>-->
+    </div>
+  </div>
+</div>
+
+<div class="container py-16 md:py-20" id="portfolio">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+  >
+    Portfolio
+  </h2>
+  <h3
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    Trabalhos Concluidos
+  </h3>
+
+  <div
+    class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2"
+  >
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="/static/img/nutricionista.jpg"
+        class="w-full shadow rounded-xl"
+        alt="portfolio image"
+      />
+    </a>
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="/static/img/nutricionista.jpg"
+        class="w-full shadow rounded-xl"
+        alt="portfolio image"
+      />
+    </a>
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="/static/img/nutricionista.jpg"
+        class="w-full shadow rounded-xl"
+        alt="portfolio image"
+      />
+    </a>
+    <a
+      href="/"
+      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
+    >
+      <img
+        src="/static/img/nutricionista.jpg"
+        class="w-full shadow rounded-xl"
+        alt="portfolio image"
+      />
+    </a>
+  </div>
+</div>
+
+<div class="bg-grey-50" id="work">
+  <div class="container py-16 md:py-20">
+    <div class="mx-auto w-full sm:w-3/4 lg:w-full">
+      <h2
+        class="text-center font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
+      >
+        Parceiros
+      </h2>
+      <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
+        <span class="m-8 block">
+          <img
+            src="/static/img/panela_de_nutri.jpeg"
+            alt="client logo"
+            class="mx-auto block h-32 w-auto"
+          />
+        </span>
+        <!--<span class="m-8 block">
+          <img
+            src="/static/img/logo-apple.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-netflix.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-amazon.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-stripe.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="bg-grey-50" id="blog">
+  <div class="container py-16 md:py-20">
+    <h2
+      class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+    >
+      Blog Pessoal
+    </h2>
+    <h4
+      class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+    >
+      Ultimas Postagens!
+    </h4>
+    <div
+      class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10"
+    >
+      <a href="" class="shadow">
+        <div
+          style="background-image: url(/static/img/post-01.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+        >
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
+          ></span>
+          <span
+            class="absolute right-0 bottom-0 mr-36 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Excluir</span
+          >
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Editar</span
+          >
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+          <span class="block pt-2 font-body text-grey-20"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+        </div>
+      </a>
+      <a href="" class="shadow">
+        <div
+          style="background-image: url(/static/img/post-02.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+        >
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
+          ></span>
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Saiba Mais</span
+          >
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+          <span class="block pt-2 font-body text-grey-20"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+        </div>
+      </a>
+      <a href="" class="shadow">
+        <div
+          style="background-image: url(/static/img/post-03.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+        >
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
+          ></span>
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Saiba Mais</span
+          >
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+          <span class="block pt-2 font-body text-grey-20"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!--<div class="bg-grey-50" id="work">
+  <div class="container py-16 md:py-20">
+    <div class="mx-auto w-full sm:w-3/4 lg:w-full">
+      <h2
+        class="text-center font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
+      >
+        Subsidiaria
+      </h2>
+      <h4
+      class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+    >
+      Bistrô Panela de Nutri
+    </h4>
+      <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
+        <span class="m-8 block">
+          <div
+      class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10"
+    >
+      <a href="" class="shadow">
+        <div
+          style="background-image: url(/static/img/post-01.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+        >
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
+          ></span>
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Saiba Mais</span
+          >
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+          <span class="block pt-2 font-body text-grey-20"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+        </div>
+      </a>
+      <a href="" class="shadow">
+        <div
+          style="background-image: url(/static/img/post-02.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+        >
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
+          ></span>
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Saiba Mais</span
+          >
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+          <span class="block pt-2 font-body text-grey-20"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+        </div>
+      </a>
+      <a href="" class="shadow">
+        <div
+          style="background-image: url(/static/img/post-03.png)"
+          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
+        >
+          <span
+            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
+          ></span>
+          <span
+            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
+            >Saiba Mais</span
+          >
+        </div>
+        <div class="bg-white py-6 px-5 xl:py-8">
+          <span class="block font-body text-lg font-semibold text-black"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+          >
+          <span class="block pt-2 font-body text-grey-20"
+            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
+          >
+        </div>
+
+          <!--<img
+            src="/static/img/panela_de_nutri.jpeg"
+            alt="client logo"
+            class="mx-auto block h-32 w-auto"
+          />
+        </span>
+        <!--<span class="m-8 block">
+          <img
+            src="/static/img/logo-apple.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-netflix.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-amazon.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-stripe.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+
+<div class="container py-16 md:py-20" id="contact">
+  <h2
+    class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
+  >
+    Contatos
+  </h2>
+  <h4
+    class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
+  >
+    Tem alguma Duvida?
+  </h4>
+  <div class="mx-auto w-full pt-5 text-center sm:w-2/3 lg:pt-6">
+    <p class="font-body text-grey-10">
+      Lorem ipsum dolor sit amet consectetur adipiscing elit hendrerit
+      condimentum turpis nisl sem, viverra habitasse urna ante lobortis
+      fermentum accumsan. Viverra habitasse urna ante lobortis fermentum
+      accumsan.
+    </p>
+  </div>
+  <form class="mx-auto w-full pt-10 sm:w-3/4" method="post" action="{{ url_for('main.processar_formulario') }}">
+    <div class="flex flex-col md:flex-row">
+      <input class="mr-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5" placeholder="Nome" type="text"/>
+      <input class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5" placeholder="Email" type="text"/>
+    </div>
+    <textarea
+      class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8" placeholder="Mensagem" id="message" cols="30" rows="10"
+    ></textarea>
+    <button
+      class="mt-6 flex items-center justify-center rounded bg-green-700 px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20"
+    >
+      Enviar
+      <i class="bx bx-chevron-right relative -right-2 text-3xl"></i>
+    </button>
+  </form>
+  <div class="flex flex-col pt-16 lg:flex-row">
+    <div
+      class="w-full border-l-2 border-t-2 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3"
+    >
+      <div class="flex items-center">
+        <i class="bx bx-phone text-2xl text-grey-40"></i>
+        <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+         Telefone
+        </p>
+      </div>
+      <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
+        (+55) 111 222 333
+      </p>
+    </div>
+    <div
+      class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2"
+    >
+      <div class="flex items-center">
+        <i class="bx bx-envelope text-2xl text-grey-40"></i>
+        <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+          Email
+        </p>
+      </div>
+      <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
+        name@mydomain.com
+      </p>
+    </div>
+    <div
+      class="w-full border-l-2 border-t-0 border-r-2 border-b-2 border-grey-60 px-6 py-6 sm:py-8 lg:w-1/3 lg:border-l-0 lg:border-t-2"
+    >
+      <div class="flex items-center">
+        <i class="bx bx-map text-2xl text-grey-40"></i>
+        <p class="pl-2 font-body font-bold uppercase text-grey-40 lg:text-lg">
+          Endereço
+        </p>
+      </div>
+      <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
+        Alagoinhas
+      </p>
+    </div>
+  </div>
+</div>
+
+<!--<div
+  class="h-72 bg-cover bg-center bg-no-repeat sm:h-64 md:h-72 lg:h-96 w-1/2"
+  style="background-image: url(/static/img/map.png)"
+></div>-->
+
+
+
+      <div class="bg-green-700">
+  <div class="container flex flex-col justify-between py-6 sm:flex-row">
+    <p class="text-center font-body text-white md:text-left">
+    </p>
+    <div class="flex items-center justify-center pt-5 sm:justify-start sm:pt-0">
+      <a href="/">
+        <i
+          class="bx bxl-facebook-square text-2xl text-white hover:text-gray-300"
+        ></i>
+      </a>
+      <a href="/" class="pl-4">
+        <i class="bx bxl-whatsapp text-2xl text-white hover:text-gray-300"></i>
+      </a>
+      <!--<a href="/" class="pl-4">
+        <i class="bx bxl-dribbble text-2xl text-white hover:text-gray-300"></i>
+      </a>-->
+      <a href="/" class="pl-4">
+        <i class="bx bxl-linkedin text-2xl text-white hover:text-gray-300"></i>
+      </a>
+      <a href="/" class="pl-4">
+        <i class="bx bxl-instagram text-2xl text-white hover:text-gray-300"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+    <script src="/static/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+
+
+    <!--Start of Tawk.to Script-->
+    
+    
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/64df68d7cc26a871b030037e/1h84b32fr';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+    
+  </body>
+</html>

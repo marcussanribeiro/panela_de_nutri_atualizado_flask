@@ -1,0 +1,24 @@
+@main_adm.route('/upload', methods=['POST'])
+@login_required
+def upload_file():
+    arquivo = request.files['file']
+
+    if arquivo:
+        # Verifica se o arquivo é permitido antes de salvá-lo
+        if arquivo and allowed_file(arquivo.filename):
+            filename = secure_filename(arquivo.filename)
+            arquivo.save(os.path.join(current_app.config['UPLOAD_FOLDER'], filename))
+            caminho_imagem = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+            novo_produto = Postagem(imagem=caminho_imagem)
+            db.session.add(novo_produto)
+            db.session.commit()
+
+            return 'Imagem salva no banco de dados!'
+        else:
+            return 'Tipo de arquivo não permitido!'
+    else:
+        return 'Nenhum arquivo enviado!'
+    
+def conteudo():
+    nome = request.form['nome']
+    descricao = request.form['descricao']

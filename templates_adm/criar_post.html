@@ -1,0 +1,103 @@
+{% extends "template_base1.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novos Posts</title>
+</head>
+<body>
+    {% block content %}
+    <main class="p-6 sm:p-10 space-y-6">
+        <div class="flex flex-col">
+            <form method="POST" action="/staffer/upload" enctype="multipart/form-data" class="border space-y-2">
+                <div>
+                    <label for="capa">capa:</label>
+                    <input type="file" name="capa" required>
+                </div>
+                <div>
+                    <label for="titulo">Titulo:</label>
+                    <input type="text" name="titulo" class="border rounded-sm my-1" required>
+                </div>
+                <div>
+                    <label for="logradouro">Conteudo:</label>
+                    <input type="text" name="conteudo" class="border rounded-sm my-1" required>
+                </div>
+                <div>
+                    <label for="resumo">Resumo:</label>
+                    <textarea name="resumo" class="border rounded-sm my-1" required></textarea>
+                </div>
+                <div id="names_container">
+                    <!-- Aqui estão os campos iniciais. Certifique-se de que não haja um botão de remover aqui. -->
+                    <div>
+                        <label for="sub_imagem">sub-Imagem:</label>
+                        <input type="file" name="sub_imagem" required>
+                    </div>
+                    <div>
+                        <label for="sub_titulo">sub-Titulo:</label>
+                        <input type="text" name="sub_titulo" class="border rounded-sm my-1" required>
+                    </div>
+                    <div>
+                        <label for="description">Sub-Topico:</label>
+                        <textarea name="sub_conteudo" class="border rounded-sm my-1" required></textarea>
+                    </div>
+                </div>
+                <!--<button type="button" onclick="adicionarCampo()">Adicionar Novo</button>-->
+                <button type="submit" onclick="adicionarCampo()" class="inline-flex px-5 py-3 text-white bg-laranja-construart hover:text-white focus:bg-site-black hover:bg-site-black focus:bg-site-black border border-white-600 rounded-md mb-3">
+                    <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    Adicionar
+                  </button>
+                </a>
+                
+                <button type="submit" class="inline-flex px-5 py-3 text-white bg-laranja-construart hover:text-white focus:bg-site-black hover:bg-site-black focus:bg-site-black border border-white-600 rounded-md mb-3">
+                    <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    Cadastrar Post
+                  </button>
+                </a>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script>
+        function adicionarCampo() {
+            const container = document.getElementById('names_container');
+    
+            const div = document.createElement('div');
+            div.innerHTML = `
+                <label for="sub_imagem">sub-imagem:</label>
+                <input type="file" name="sub_imagem" required>
+                <br>
+                <label for="sub_titulo">sub-titulo:</label>
+                <input type="text" name="sub_titulo" required>
+                <br>
+                <label for="sub_conteudo">sub-conteudo:</label>
+                <input type="text" name="sub_conteudo" required>
+                <br>
+                <button type="button" onclick="removerCampo(this)" class="inline-flex px-5 py-3 text-white bg-laranja-construart hover:text-white focus:bg-site-black hover:bg-site-black focus:bg-site-black border border-white-600 rounded-md mb-3">
+                    <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="flex-shrink-0 h-5 w-5 -ml-1 mt-0.5 mr-2">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                    Remover
+                  </button>
+                </a>
+            `;
+    
+            container.appendChild(div);
+        }
+    
+        function removerCampo(element) {
+            // Verifica se há mais de um campo antes de permitir a remoção
+            const container = document.getElementById('names_container');
+            if (container.children.length > 1) {
+                container.removeChild(element.parentNode);
+            }
+        }
+    </script>
+    
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,150 @@
+{% extends "template_base.html" %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construart - Inicio</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="{{ url_for('static', filename='js/tailwindcss.js') }}"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+</head>
+
+<body class="m-0">
+
+    {% block sub_post %}
+
+    <h1 class="w-full flex justify-center text-2xl font-bold">{{post.titulo}}</h1>
+    
+        
+    <div class="w-full grid grid-cols-2 phone:max-md:grid-cols-1 items-center space-x-2 ">
+        <!--{#{% for subconteudo in subconteudos %}#}
+        <article class="grid grid-row-2  phone:max-md:grid-cols-1 shadow w-max:96 mx-2 my-10 overflow-y-hidden article-container">
+            <div class="h-80">
+                <a href="#" onclick="openPopup('{#{{ subconteudo.id }}#]')" class="flex hover:opacity-75 justify-center w-full h-72">
+                    <img class="h-full w-full object-center" src="{{ subconteudo.sub_imagem }}">
+                </a>
+            </div>
+            <div class="flex flex-col justify-start w-full">
+                <a href="#" class="text-xl font-bold uppercase text-center">{{ subconteudo.sub_titulo }}</a>
+            </div>
+        </article>-->
+
+
+
+
+        <!--<div id="popup-{{ subconteudo.id }}" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden z-40">
+            <button class="px-4 py-2 bg-blue-500 text-white rounded" onclick="closePopup('{{ subconteudo.id }}')">X</button>
+            <div class="bg-white rounded w-11/12 h-full p-4">
+                <h2 class="text-2xl font-bold mb-2 text-center">{{ subconteudo.sub_titulo }}</h2>
+
+                <div class="flex flex-row w-full h-full">
+                    <div class="flex flex-col w-1/5 h-full bg-gray-100 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300">
+                        {% for subtopico in subconteudo.subtopicos_relacionados %}
+                        <div class="mb-2">
+                            <img src="{{ subtopico.subtopico_imagem }}" onclick="mostrarImagemGrande('{{ subtopico.subtopico_imagem }}')">
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                    <div class="flex flex-row w-full h-full">
+                        <div class="flex flex-row w-full h-full bg-yellow-300" id="imagem-grande"> </div>
+                        
+                        <div class="flex flex-row w-1/2 h-full text-justify ml-2 bg-red-300">
+                            <!-- Exibir o conteúdo do subconteúdo aqui
+                            {{ subconteudo.sub_conteudo }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {#{% endfor %}#}
+    </div>-->
+    {% for subconteudo in subconteudos %}
+    {% set popup_id = subconteudo.id ~ "-" ~ loop.index %}
+    
+    <article class="grid grid-row-2 phone:max-md:grid-cols-1 shadow w-max:96 mx-2 my-10 overflow-y-hidden article-container">
+        <div class="h-80">
+            <a href="#" onclick="openPopup('{{ popup_id }}')" class="flex hover:opacity-75 justify-center w-full h-72">
+                <img class="h-full w-full object-center" src="{{ subconteudo.sub_imagem }}">
+            </a>
+        </div>
+        <div class="flex flex-col justify-start w-full">
+            <a href="#" class="text-xl font-bold uppercase text-center">{{ subconteudo.sub_titulo }}</a>
+        </div>
+    </article>
+
+    <div id="popup-{{ popup_id }}"
+        class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 hidden z-40">
+        <!-- restante do código do pop-up -->
+
+        <div class="flex flex-row w-full h-full">
+            <div class="flex flex-col w-1/5 h-full bg-gray-100 overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300">
+                {% for subtopico in subconteudo.subtopicos_relacionados %}
+                    <div class="mb-2">
+                        <a href="#"><img src="{{ subtopico.subtopico_imagem }}" onclick="mostrarImagemGrande('{{ subtopico.subtopico_imagem }}', '{{ popup_id }}')"></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="flex flex-row w-full h-full">
+                <div class="flex flex-row w-full h-full bg-yellow-300" id="imagem-grande-{{ popup_id }}" class="imagem-grande"> </div>
+                <div class="flex flex-row w-1/2 h-full text-justify ml-2 bg-red-300">
+                    <!-- Exibir o conteúdo do subconteúdo aqui-->
+                    {{ subconteudo.sub_conteudo }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+    
+
+    
+
+
+    <!--<script>
+        function mostrarImagemGrande(imagem, popupId) {
+            document.getElementById("imagem-grande").innerHTML = "<img src='" + imagem + "' class='w-full'>";
+            document.getElementById(popupId).style.display = 'flex';
+        }
+    </script>-->
+    <!--<script>
+        function mostrarImagemGrande(imagem, popupId) {
+            var imagemGrande = document.querySelector(`#${popupId} .imagem-grande`);
+            imagemGrande.innerHTML = "<img src='" + imagem + "' class='w-full'>";
+            document.getElementById(popupId).style.display = 'flex';
+        }
+    </script>
+
+    <script>
+        function openPopup(id) {
+            document.getElementById('popup-' + id).style.display = 'flex';
+        }
+
+        function closePopup(id) {
+            document.getElementById('popup-' + id).style.display = 'none';
+        }
+
+    </script>-->
+    <script>
+    function mostrarImagemGrande(imagem, popupId) {
+        var imagemGrande = document.querySelector(`#${popupId} .imagem-grande`);
+        imagemGrande.innerHTML = `<img src="${imagem}" class="w-full">`;
+        document.getElementById(popupId).style.display = 'flex';
+    }
+    
+    function openPopup(id) {
+        document.getElementById('popup-' + id).style.display = 'flex';
+    }
+    
+    function closePopup(id) {
+        document.getElementById('popup-' + id).style.display = 'none';
+    }
+</script>
+
+    {% endblock %}
+</body>
+
+</html>
