@@ -160,19 +160,6 @@
           ></span>
         </li>
         
-        <!--<li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#clients')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Clientes</span
-          >
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
-          ></span>
-        </li>-->
-        
         <li class="group pl-6">
           
           <span
@@ -185,18 +172,6 @@
             class="block h-0.5 w-full bg-transparent group-hover:bg-white"
           ></span>
         </li>
-        
-        <!--<li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#statistics')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Meu Trabalho</span>
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
-          ></span>
-        </li>-->
         
         <li class="group pl-6">
           
@@ -255,7 +230,7 @@
         <span
           @click="triggerMobileNavItem('#about')"
           class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >About</span
+          >Sobre Mim</span
         >
         
       </li>
@@ -265,7 +240,7 @@
         <span
           @click="triggerMobileNavItem('#services')"
           class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Services</span
+          >Consultorias</span
         >
         
       </li>
@@ -280,15 +255,6 @@
         
       </li>
       
-      <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#clients')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Clients</span
-        >
-        
-      </li>
       
       <li class="py-2">
         
@@ -300,22 +266,13 @@
         
       </li>
       
-      <li class="py-2">
-        
-        <span
-          @click="triggerMobileNavItem('#statistics')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Statistics</span
-        >
-        
-      </li>
       
       <li class="py-2">
         
         <span
           @click="triggerMobileNavItem('#blog')"
           class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Blog</span
+          >Produtos</span
         >
         
       </li>
@@ -325,7 +282,7 @@
         <span
           @click="triggerMobileNavItem('#contact')"
           class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Contact</span
+          >Contatos</span
         >
         
       </li>
@@ -413,26 +370,24 @@
 </div>
 
 <div class="bg-grey-50" id="about">
+
+
+
   <div class="container flex flex-col items-center py-16 md:py-20 lg:flex-row">
+
     <div class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
       <h2
         class="font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
       >
         Quem sou eu?
       </h2>
-      <h4
+      <!--<h4
         class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
       >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      </h4>
+      </h4>-->
       <p class="pt-6 font-body leading-relaxed text-grey-20">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        Sou consultora de Alimentos, especialista em Controle de Qualidade e Segurança de Alimentos. Ajudo Empresários da área de Alimentos a alavancarem suas empresas através da Consultoria de Alimentos. Converse comigo, consultora em serviço de alimentação e poderei te ajudar a capacitar sua equipe e tornar seu estabecimento, um lugar de sucesso.
       </p>
       <div
         class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
@@ -520,6 +475,7 @@
   <h2
     class="text-center font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
   >
+
     Consultorias
   </h2>
   <h3
@@ -532,164 +488,28 @@
     class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3"
   >
     <div class="group rounded  shadow hover:bg-primary">
-      <div class="h-72 w-full text-center xl:h-72 xl:w-full">
-        <!--<div class="hidden group-hover:block">
-          <img
-            src="/static/img/icon-development-white.svg"
-            alt="development icon"
-          />
-        </div>-->
+      <div class="h-48  w-full text-center xl:h-48 xl:w-full">
         {% for servicos in servico %}
-        <div class="block ">
+        <div class="block">
          
-          <img class="" src="{{servicos.imagem}}"
+          <img class=" " src="{{servicos.imagem}}"
             alt="content marketing icon"
           />
         </div>
       </div>
-      <div class="text-center">
+      <div class=" md:pt-5  ">
         <h3
-          class="pt-2 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
+          class="text-center font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
         >
         {{servicos.titulo}}
         </h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
+        <p class="text-grey pt-2 text-sm text-justify group-hover:text-white md:text-base">
           {{servicos.resumo}}
         </p>
         {% endfor %}
       </div>
       
     </div>
-
-    <!--<div class="group rounded px-8 py-12 shadow hover:bg-primary">
-      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-        <div class="hidden group-hover:block">
-          <img
-            src="/static/img/icon-content-white.svg"
-            alt="content marketing icon"
-          />
-        </div>
-        <div class="block">
-          <img
-            src="/static/img/emagrecimento.jpg"
-            alt="content marketing icon"
-          />
-        </div>
-      </div>
-      <div class="text-center">
-        <h3
-          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
-        >
-          EMAGRECIMENTO
-        </h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-      </div>
-    </div>
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-        <div class="hidden group-hover:block">
-          <img
-            src="/static/img/icon-mobile-white.svg"
-            alt="Mobile Application icon"
-          />
-        </div>
-        <div class="block">
-          <img
-            src="/static/img/emagrecimento.jpg"
-            alt="content marketing icon"
-          />
-        </div>
-      </div>
-      <div class="text-center">
-        <h3
-          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-white lg:text-xl"
-        >
-        Nutrição Esportiva
-        </h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-      </div>
-    </div>-->
-    <!--<div class="group rounded px-8 py-12 shadow hover:bg-primary">
-      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-        <div class="hidden group-hover:block">
-          <img
-            src="/static/img/icon-email-white.svg"
-            alt="Email Marketing icon"
-          />
-        </div>
-        <div class="block group-hover:hidden">
-          <img
-            src="/static/img/icon-email-black.svg"
-            alt="Email Marketing icon"
-          />
-        </div>
-      </div>
-      <div class="text-center">
-        <h3
-          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
-        >
-          Email Development
-        </h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-      </div>
-    </div>
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-        <div class="hidden group-hover:block">
-          <img
-            src="/static/img/icon-design-white.svg"
-            alt="Theme Design icon"
-          />
-        </div>
-        <div class="block group-hover:hidden">
-          <img
-            src="/static/img/icon-design-black.svg"
-            alt="Theme Design icon"
-          />
-        </div>
-      </div>
-      <div class="text-center">
-        <h3
-          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
-        >
-          Graphic Design
-        </h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-      </div>
-    </div>
-    <div class="group rounded px-8 py-12 shadow hover:bg-primary">
-      <div class="mx-auto h-24 w-24 text-center xl:h-28 xl:w-28">
-        <div class="hidden group-hover:block">
-          <img
-            src="/static/img/icon-graphics-white.svg"
-            alt="Graphic Design icon"
-          />
-        </div>
-        <div class="block group-hover:hidden">
-          <img
-            src="/static/img/icon-graphics-black.svg"
-            alt="Graphic Design icon"
-          />
-        </div>
-      </div>
-      <div class="text-center">
-        <h3
-          class="pt-8 text-lg font-semibold uppercase text-primary group-hover:text-yellow lg:text-xl"
-        >
-          Web Design
-        </h3>
-        <p class="text-grey pt-4 text-sm group-hover:text-white md:text-base">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </p>
-      </div>-->
     </div>
   </div>
 </div>
@@ -698,6 +518,7 @@
   <h2
     class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
   >
+
     Portfolio
   </h2>
   <h3
@@ -709,48 +530,14 @@
   <div
     class="mx-auto grid w-full grid-cols-1 gap-8 pt-12 sm:w-3/4 md:gap-10 lg:w-full lg:grid-cols-2"
   >
-    <!--<a
-      href="/"
-      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
-    >-->
-    {% for ports in portfolio %}
-      <img
-        src="{{ports.imagem}}"
-        class="w-full shadow rounded-xl"
-        alt="portfolio image"
-      />
-      {% endfor %}
-    <!--</a>-->
-    <!--<a
-      href="/"
-      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
-    >
-      <img
-        src="/static/img/nutricionista.jpg"
-        class="w-full shadow rounded-xl"
-        alt="portfolio image"
-      />
-    </a>
-    <a
-      href="/"
-      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
-    >
-      <img
-        src="/static/img/nutricionista.jpg"
-        class="w-full shadow rounded-xl"
-        alt="portfolio image"
-      />
-    </a>
-    <a
-      href="/"
-      class="mx-auto transform transition-all hover:scale-105 md:mx-0"
-    >
-      <img
-        src="/static/img/nutricionista.jpg"
-        class="w-full shadow rounded-xl"
-        alt="portfolio image"
-      />
-    </a>-->
+  {% for ports in portfolio %}
+  <img
+    src="{{ports.imagem}}"
+    class="w-full shadow rounded-xl"
+    alt="portfolio image"
+  />
+  {% endfor %}
+   
   </div>
 </div>
 
@@ -762,16 +549,16 @@
       >
         Parceiros
       </h2>
-      <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
-        {% for marcas in logomarca %}
-        <span class="m-8 block">
-          <img
-            src="{{marcas.logomarca}}"
-            alt="client logo"
-            class="mx-auto block h-32 w-auto"
-          />
-        </span>
-        {% endfor %}
+    <div class="flex flex-wrap items-center justify-center pt-4 sm:pt-4">
+      {% for marcas in logomarca %}
+      <span class="m-8 block">
+        <img
+          src="{{marcas.logomarca}}"
+          alt="client logo"
+          class="mx-auto block h-32 w-auto"
+        />
+      </span>
+      {% endfor %}
         <!--<span class="m-8 block">
           <img
             src="/static/img/logo-apple.svg"
@@ -810,17 +597,18 @@
 
 
 
-<div class="bg-grey-50" id="blog">
+<div class="" id="blog">
   <div class="container py-16 md:py-20">
     <h2
       class="text-center font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl"
     >
-      Blog Pessoal
+
+      Produtos
     </h2>
     <h4
       class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
     >
-      Ultimas Postagens!
+      Bistrô Panela de Nutri
     </h4>
     <div
       class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10"
@@ -838,7 +626,7 @@
           >Saiba Mais</span
         >
       </div>
-      <div class="grid grid-rows-2 bg-white px-3 h-52">
+      <div class="grid grid-rows-2 bg-white px-3 h-40">
       <div class=" grid  py-3">
         <span class=" font-body text-lg font-semibold text-center  text-black"
           >{{ posts.titulo }}</span
@@ -852,52 +640,6 @@
       </div>
     </a>
       {% endfor %}
-      <!--<a href="" class="shadow">
-        <div
-          style="background-image: url(/static/img/post-02.png)"
-          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-        >
-          <span
-            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
-          ></span>
-          <span
-            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
-            >Saiba Mais</span
-          >
-        </div>
-        <div class="bg-white py-6 px-5 xl:py-8">
-          <span class="block font-body text-lg font-semibold text-black"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
-          >
-          <span class="block pt-2 font-body text-grey-20"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
-          >
-        </div>
-      </a>
-      <a href="" class="shadow">
-        <div
-          style="background-image: url(/static/img/post-03.png)"
-          class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72"
-        >
-          <span
-            class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"
-          ></span>
-          <span
-            class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base"
-            >Saiba Mais</span
-          >
-        </div>
-        <div class="bg-white py-6 px-5 xl:py-8">
-          <span class="block font-body text-lg font-semibold text-black"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
-          >
-          <span class="block pt-2 font-body text-grey-20"
-            >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.</span
-          >
-        </div>-->
-      </a>
     </div>
   </div>
 </div>

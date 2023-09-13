@@ -239,7 +239,11 @@ def logout():
 @main_adm.route("/visualizar_pagina")
 @login_required
 def visualizar_pagina():
-    return render_template("index_adm.html")
+    query = Conteudo.query.order_by(Conteudo.id.desc()).all()
+    logomarca = Parceiro.query.order_by(Parceiro.id.desc()).all()
+    portfolio = Portfolio.query.order_by(Portfolio.id.desc()).all()
+    servico = Servico.query.order_by(Servico.id.desc()).all()
+    return render_template("index_adm.html", query=query, logomarca=logomarca, portfolio=portfolio, servico=servico )
 
 
 
