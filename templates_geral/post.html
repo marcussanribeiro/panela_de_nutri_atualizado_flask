@@ -127,7 +127,7 @@
         <li class="group pl-6">
           
           <span
-            @click="triggerNavItem('#about')"
+          onclick="redirect('{{url_for('main.index')}}#about')"
             class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
             >Sobre Mim</span
           >
@@ -140,7 +140,7 @@
         <li class="group pl-6">
           
           <span
-            @click="triggerNavItem('#services')"
+          onclick="redirect('{{url_for('main.index')}}#services')"
             class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
             >Serviços</span
           >
@@ -153,7 +153,7 @@
         <li class="group pl-6">
           
           <span
-            @click="triggerNavItem('#portfolio')"
+          onclick="redirect('{{url_for('main.index')}}#portfolio')"
             class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
             >Portfolio</span
           >
@@ -166,9 +166,25 @@
         <li class="group pl-6">
           
           <span
-            @click="triggerNavItem('#work')"
+          onclick="redirect('{{url_for('main.index')}}#work')"
+          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+        >
+          Parceiros
+        </span>
+  
+
+          
+          <span
+            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
+          ></span>
+        </li>
+        
+        <li class="group pl-6">
+          
+          <span
+            onclick="redirect('{{url_for('main.index')}}#blog')"
             class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Parceiros</span
+            >Produtos</span
           >
           
           <span
@@ -179,20 +195,7 @@
         <li class="group pl-6">
           
           <span
-            @click="triggerNavItem('#blog')"
-            class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-            >Blog</span
-          >
-          
-          <span
-            class="block h-0.5 w-full bg-transparent group-hover:bg-white"
-          ></span>
-        </li>
-        
-        <li class="group pl-6">
-          
-          <span
-            @click="triggerNavItem('#contact')"
+          onclick="redirect('{{url_for('main.index')}}#contact')"
             class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
             >Contatos</span
           >
@@ -201,6 +204,17 @@
             class="block h-0.5 w-full bg-transparent group-hover:bg-white"
           ></span>
         </li>
+
+        <script>
+          function redirect(url) {
+            window.location.href = url;
+          }
+        </script>
+        <!--<script>
+          function redirect(url) {
+            window.location.replace(url);
+          }
+        </script>-->
         
       </ul>
     </div>
@@ -262,10 +276,17 @@
       <li class="py-2">
         
         <span
-          @click="triggerMobileNavItem('#work')"
-          class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
-          >Parceiros</span
-        >
+        onclick="redirect('{{url_for('main.index')}}')"
+        class="cursor-pointer pt-0.5 font-header font-semibold uppercase text-white"
+      >
+        Parceiros
+      </span>
+
+      <script>
+        function redirect(url) {
+          window.location.href = url;
+        }
+      </script>
         
       </li>
       
@@ -377,12 +398,12 @@
       <h2
         class="text-center font-header text-4xl font-semibold uppercase text-green-700 sm:text-5xl lg:text-6xl"
       >
-        Blog Pessoal
+        Produtos
       </h2>
       <h4
       class="pt-6 text-center font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl"
     >
-   {{ post.titulo }}
+   Bistrô Panela de Nutri
     </h4>
 
     <div class="flex gap-8 pt-10">

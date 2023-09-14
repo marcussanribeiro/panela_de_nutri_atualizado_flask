@@ -11,11 +11,21 @@ main_routes = Blueprint('main', __name__, template_folder='../templates_geral')
 
 @main_routes.route("/")
 def index():
-    query = Conteudo.query.order_by(Conteudo.id.desc()).all()
+    page_num = request.args.get('page_num', 1, type=int)
+    per_page = 3  # Defina o número de posts por página aqui
+
+    # Obtenha os posts paginados usando SQLAlchemy (assumindo que você está usando SQLAlchemy)
+    pagination = Conteudo.query.order_by(Conteudo.id.desc()).paginate(page=page_num, per_page=per_page, error_out=False)
+    #posts = pagination.items
+
+    # Obtenha outros dados (logomarca, portfolio, servico) sem fazer consultas desnecessárias
+    query = Conteudo.query.order_by(Conteudo.id.desc()).paginate(page=page_num, per_page=per_page)
     logomarca = Parceiro.query.order_by(Parceiro.id.desc()).all()
     portfolio = Portfolio.query.order_by(Portfolio.id.desc()).all()
     servico = Servico.query.order_by(Servico.id.desc()).all()
-    return render_template("index.html", query=query, logomarca=logomarca, portfolio=portfolio, servico=servico )
+
+    return render_template("index.html", query=query, logomarca=logomarca, portfolio=portfolio, servico=servico, pagination=pagination)
+
 
 @main_routes.route('/posts/<token>')
 def show_post(token):
@@ -46,7 +56,7 @@ def processar_formulario():
     from main import mail  # Importe aqui para evitar a circular import
 
     msg = Message('Nova dúvida do formulário de contato',
-                  recipients=['tickets@odygamers.p.tawk.email'])
+                  recipients=['marcus.s.ribeiro@outlook.com'])
     msg.body = f'Nome: {nome}\nE-mail: {email}\nMensagem: {mensagem}'
 
     mail.send(msg)

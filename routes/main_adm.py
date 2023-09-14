@@ -196,9 +196,19 @@ def upload_consultoria():
         db.session.add(servico)
         db.session.commit()
 
-        return "Upload bem-sucedido!"  # Adicionando um retorno após o upload bem-sucedido
+        return "Upload bem-sucedido!"
+    elif not imagem:
+        caminho_imagem = None
+
+        servico = Servico(imagem=caminho_imagem, titulo=titulo, resumo=resumo)
+        db.session.add(servico)
+        db.session.commit()
+
+        return "Upload bem-sucedido! (Sem imagem)"
     else:
         return "Erro: A capa é um arquivo inválido."
+    
+
 
 
 @main_adm.route("/editar_slides", methods=["GET", "POST"])

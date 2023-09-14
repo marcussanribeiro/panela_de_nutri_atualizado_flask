@@ -307,7 +307,7 @@
     <div class="flex flex-col items-center justify-center lg:flex-row">
       <div class="rounded-full border-8 border-green-700 shadow-xl">
         <img
-          src="/static/img/Claudia.png"
+          src="/static/img/blog-author.jpg"
           class="h-48 rounded-full sm:h-56"
           alt="author"
         />
@@ -387,7 +387,7 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       </h4>-->
       <p class="pt-6 font-body leading-relaxed text-grey-20">
-        Sou consultora de Alimentos, especialista em Controle de Qualidade e Segurança de Alimentos. Ajudo Empresários da área de Alimentos a alavancarem suas empresas através da Consultoria de Alimentos. Converse comigo, consultora em serviço de alimentação e poderei te ajudar a capacitar sua equipe e tornar seu estabecimento, um lugar de sucesso.Sou Nutricionista, formada desde 2014, Consultora de Alimentos, pós graduada em Gestão de Unidades de Alimentação e Nutrição - UAN, Segurança de Alimentos, atuo em diferentes tipos de serviços de alimentação, como restaurantes, cafeterias, hamburguerias, pizzarias, supermercados, fast foods, food trucks, shoppings, redes de franquias, entre outros.
+        Sou consultora de Alimentos, especialista em Controle de Qualidade e Segurança de Alimentos. Ajudo Empresários da área de Alimentos a alavancarem suas empresas através da Consultoria de Alimentos. Converse comigo, consultora em serviço de alimentação e poderei te ajudar a capacitar sua equipe e tornar seu estabecimento, um lugar de sucesso.
       </p>
       <div
         class="flex flex-col justify-center pt-6 sm:flex-row lg:justify-start"
@@ -432,8 +432,40 @@
       </div>
     </div>
     <div class="w-full pl-0 pt-10 sm:w-3/4 lg:w-2/5 lg:pl-12 lg:pt-0">
+      <!--<h2 class="font-header text-4xl font-semibold uppercase text-green-700 sm:text-4xl lg:text-4xl"> Serviços Procurados</h2>
+      <div>
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">
+            Nutrição Esportiva
+          </h4>
+          <h3 class="font-body text-3xl font-bold text-green-700">85%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-green-700" style="width: 30%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">Modulação Intestinal</h4>
+          <h3 class="font-body text-3xl font-bold text-green-700">70%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-green-700" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="pt-6">
+        <div class="flex items-end justify-between">
+          <h4 class="font-body font-semibold uppercase text-black">
+            Emagrecimento
+          </h4>
+          <h3 class="font-body text-3xl font-bold text-green-700">98%</h3>
+        </div>
+        <div class="mt-2 h-3 w-full rounded-full bg-lila">
+          <div class="h-3 rounded-full bg-green-700" style="width: 98%"></div>
+        </div>
+      </div>-->
       <div class=" w-full h-96">
-      <img class=" w-full rounded-xl sm:h-96 object-center" src="/static/img/Claudia.png"  alt="author"/>
+      <img class=" w-full rounded-xl sm:h-96 object-center" src="/static/img/blog-author.jpg"  alt="author"/>
 
     </div>
   </div>
@@ -452,31 +484,24 @@
     E Serviços
   </h3>
 
-  <div class="grid grid-cols-3 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3 roundedgroup  ">
+  <div class="grid grid-cols-1 gap-6 pt-10 sm:grid-cols-2 md:gap-10 md:pt-12 lg:grid-cols-3 rounded">
     {% for servicos in servico %}
-    <div class=" group">
-      
-    <div class=" rounded  shadow group-hover:bg-green-700 ">
-        
-        <div class="relative">
-          <img class="" src="{{servicos.imagem}}"/>
+        <div class="group rounded shadow hover:bg-primary">
+            <div class="relative">
+                <img class="w-full h-48 object-cover rounded" src="{{servicos.imagem}}" alt="content marketing icon" />
+              </div>     
+            <div class="pt-4 bg-white">
+              <h3 class="font-semibold uppercase text-primary group-hover:text-white lg:text-xl text-center">
+                {{servicos.titulo}}
+            </h3>
+                <p class="text-grey pt-2 text-sm text-justify md:text-base text-center">
+                    {{servicos.resumo}}
+                </p>
+            </div>
         </div>
-        <div class="h-36 pt-4 bg-white group-hover:bg-green-700">
-        <h3 class="text-center font-semibold uppercase group-hover:text-white group-hover:bg-green-700 lg:text-xl">
-        {{servicos.titulo}}
-        </h3>
-        <p class="text-grey text-sm text-justify group-hover:text-white group-hover:bg-green-700  md:text-base ">
-          {{servicos.resumo}}
-        </p>
-        
-      </div>
-    </div>
-    </div>
     {% endfor %}
-  </div>
 </div>
-</div>
-</div>
+
 
 <div class="container py-16 md:py-20" id="portfolio">
   <h2
@@ -505,8 +530,6 @@
   </div>
 </div>
 
-
-
 <div class="bg-grey-50" id="work">
   <div class="container py-16 md:py-20">
     <div class="mx-auto w-full sm:w-3/4 lg:w-full">
@@ -525,6 +548,37 @@
         />
       </span>
       {% endfor %}
+        <!--<span class="m-8 block">
+          <img
+            src="/static/img/logo-apple.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-netflix.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-amazon.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>
+
+        <span class="m-8 block">
+          <img
+            src="/static/img/logo-stripe.svg"
+            alt="client logo"
+            class="mx-auto block h-12 w-auto"
+          />
+        </span>-->
       </div>
     </div>
   </div>
@@ -766,11 +820,11 @@
   </div>
   <form class="mx-auto w-full pt-10 sm:w-3/4" method="post" action="{{ url_for('main.processar_formulario') }}">
     <div class="flex flex-col md:flex-row">
-      <input class="mr-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5" placeholder="Nome" name="nome" type="text"/>
-      <input class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5" placeholder="Email" name="email" type="text"/>
+      <input class="mr-3 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:w-1/2 lg:mr-5" placeholder="Nome" type="text"/>
+      <input class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-0 md:ml-3 md:w-1/2 lg:ml-5" placeholder="Email" type="text"/>
     </div>
     <textarea
-      class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8" placeholder="Mensagem" name="mensagem" id="message" cols="30" rows="10"
+      class="mt-6 w-full rounded border-grey-50 px-4 py-3 font-body text-black md:mt-8" placeholder="Mensagem" id="message" cols="30" rows="10"
     ></textarea>
     <button
       class="mt-6 flex items-center justify-center rounded bg-green-700 px-8 py-3 font-header text-lg font-bold uppercase text-white hover:bg-grey-20"
@@ -790,8 +844,7 @@
         </p>
       </div>
       <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-         (75)9.8896-9468 <br>
-          (75)9.9938-3371
+        (+55) 111 222 333
       </p>
     </div>
     <div
@@ -804,7 +857,7 @@
         </p>
       </div>
       <p class="pt-2 text-left font-body font-bold text-primary lg:text-lg">
-        nutriclaudia@yahoov.com.br
+        name@mydomain.com
       </p>
     </div>
     <div
