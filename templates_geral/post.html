@@ -4,39 +4,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+<script src="{{ url_for('static', filename='js/tailwindcss.config.js') }}"> </script>
   <title>Document</title>
 </head>
 <body>
   {%block content %}
-  <div class="flex flex-col md:flex-row w-full bg-black ">
-    <div class="bg-orange-400 w-full md:w-2/12 flex  md:flex-col flex-row space-x-4 md:space-y-4">
-      <div class="cursor-pointer product-image-thumb">
-        <img src="{{post.capa}}" alt="Miniatura 1" class="w-32 h-auto rounded">
-    </div>
+  <div class="flex flex-col md:flex-row w-full mt-4">
+    <div class="w-full md:w-2/12 sm:w-full flex md:flex-col flex-row md:mr-4 mb-2 md:mb-0 ">
+        <div class="cursor-pointer product-image-thumb sm:flex-row">
+            <img src="{{post.capa}}" class="w-20 md:w-full h-full md:h-32 rounded">
+        </div>
 
-    <!-- Miniatura 2 -->
-    {% for imagens in subconteudos %}
-    <div class=" cursor-pointer product-image-thumb sm:flex-row">
-        <img src="{{imagens.sub_imagem}}" alt="Miniatura 2" class="w-32 h-auto rounded">
+        <!-- Miniatura 2 -->
+        {% for imagens in subconteudos %}
+            <div class=" cursor-pointer product-image-thumb mt-0 md:mt-2 ml-2 md:ml-0 sm:flex-row">
+                <img src="{{imagens.sub_imagem}}" class="w-20 md:w-full h-full md:h-32 rounded">
+            </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-    </div>
-    <div class=" bg-red-600 w-full md:w-2/5">
+    <div class=" w-full md:w-2/5">
       <div class="md:block product-image-thumb w-full h-600 active">
         <!-- Imagem ampliada (inicialmente oculta) -->
-        <img class=" product-image rounded-lg w-full h-600" id="minha-imagem" src="{{post.capa}}" alt="Imagem Ampliada">
+        <img class=" product-image rounded-lg w-full h-600 .active" id="minha-imagem" src="{{post.capa}}" alt="Imagem Ampliada">
     </div>
     </div>
-    <div class=" bg-blue-300 w-full md:w-3/5  justify-center">
-        <h2 class="text-xl font-semibold mb-2">Nome do Produto</h2>
-        <p class="text-gray-600">Descrição do produto Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p class="text-green-600 font-semibold mt-2">$99.99</p>
-
-
-    </div>
+    <div class="flex-shrink-0 flex md:w-3/6 flex-col justify-center mx-4  ">
+      <div class="product-description w-full ">
+          <h2 class="text-xl font-semibold mb-2 text-center">Nome do Produto</h2>
+          <p class="text-gray-600">Descrição do produto Lorem ipsum dolor sit amet, consectetur adipiscing elit.Descrição do produto Lorem ipsum dolor sit amet, consectetur adipiscing elit.Descrição do produto Lorem ipsum dolor sit amet, consectetur adipiscing elit.Descrição do produto Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="text-green-600 font-semibold mt-2">$99.99</p>
+      </div>
+  </div>
 
 </div>
 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      let minhaImagem = document.getElementById('minha-imagem');
+      minhaImagem.style.width = '100%'; // Define a largura usando CSS
+      minhaImagem.style.height = '450px'; // Define a altura usando CSS
+  });
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+<script>
+    (function($) {
+        $('.product-image-thumb').on('click', function () {
+            var image_element = $(this).find('img');
+            $('.product-image').prop('src', $(image_element).attr('src'));
+            $('.product-image-thumb.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    })(jQuery);
+</script>
+
+
+
+<script src="/static/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.js"></script>
 
 
 
